@@ -11,10 +11,10 @@ export class TodosService {
 
   getTodos(): Observable<TodoInterface[]> {
     const todos: TodoInterface[] = [
-      { id: 1, name: 'Eat' },
-      { id: 2, name: 'Sleep' },
-      { id: 3, name: 'Rave' },
-      { id: 4, name: 'Repeat' }
+      { id: 1, name: 'Eat' , hours: 0.5},
+      { id: 2, name: 'Sleep', hours: 8 },
+      { id: 3, name: 'Rave', hours: 8 },
+      { id: 4, name: 'Repeat', hours: 24 }
     ];
     return of(todos).pipe(delay(3000));
   }

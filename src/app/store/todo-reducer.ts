@@ -8,7 +8,7 @@ export const initialState: TodosStateInterface = {
   error: null
 }
 
-export const reducers = createReducer(
+export const todoReducer = createReducer(
   initialState,
   on(Actions.getTodos, (state) => ({
     ...state,

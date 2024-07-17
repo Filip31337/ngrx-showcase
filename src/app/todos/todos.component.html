@@ -1,7 +1,10 @@
 <p>todos works!</p>
-<p *ngIf="isLoading">Loading todos...</p>
-<p *ngIf="error">{{error}}</p>
-
-<div *ngFor="let todo of todos">
-  {{ todo.name }}
+<p *ngIf="isLoading">Loading todo list...</p>
+<div *ngIf="!isLoading">
+  <div *ngFor="let todo of todos">
+    {{ todo.name }}
+  </div>
+  <div>Total Hours: {{ hoursTotal$ | async }}</div>
 </div>
+
+<p *ngIf="error">{{error}}</p>

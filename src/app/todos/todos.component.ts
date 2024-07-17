@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import * as Actions from "../store/actions";
-import {Subscription} from "rxjs";
+import {map, Observable, Subscription} from "rxjs";
 import {errorSelector, isTodosLoadingSelector, todosSelector} from "../store/selectors";
 import {AppStateInterface} from "../model/app-state.interface";
 import {TodoInterface} from "../model/todo.interface";
@@ -18,6 +18,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   private isLoadingSubscription!: Subscription;
   private errorSubscription!: Subscription;
   private todosSubscription!: Subscription;
+  hoursTotal$: Observable<number> | undefined;
 
   constructor(private store: Store<AppStateInterface>) {
   }
@@ -33,6 +34,10 @@ export class TodosComponent implements OnInit, OnDestroy {
     this.todosSubscription = this.store.pipe(select(todosSelector)).subscribe( todos => {
       this.todos = todos;
     });
+    this.hoursTotal$ = this.store.pipe(
+      select(todosSelector),
+      map((todos) => todos.reduce((acc, todo) => acc + todo.hours, 0))
+    );
   }
 
   ngOnDestroy(): void {
