@@ -7,6 +7,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {StoreModule} from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import {TodoStore} from "./store/todo-store";
 
 
 
@@ -17,8 +18,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
     CommonModule,
     AppRoutingModule,
     TodosModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot(),
+    /*StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot(),*/
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode(), autoPause: true })
   ],
   providers: [],

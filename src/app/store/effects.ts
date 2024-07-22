@@ -1,3 +1,4 @@
+/*
 import {Injectable} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import * as TodoActions from "./actions";
@@ -26,3 +27,4 @@ export class TodosEffects {
   );
 
 }
+*/

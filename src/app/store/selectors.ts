@@ -1,3 +1,4 @@
+/*
 import {AppStateInterface} from "../model/app-state.interface";
 import {createSelector} from "@ngrx/store";
 
@@ -17,3 +18,4 @@ export const errorSelector = createSelector(
   selectFeature,
   (state) => state.error
 );
+*/

@@ -1,3 +1,4 @@
+/*
 import {TodosStateInterface} from "../model/todos-state.interface";
 import {createReducer, on} from "@ngrx/store";
 import * as Actions from './actions';
@@ -25,3 +26,4 @@ export const todoReducer = createReducer(
     error: action.error
   }))
 );
+*/
